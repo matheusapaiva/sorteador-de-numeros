@@ -38,9 +38,9 @@ function sortear() {
             alterarStatusBtn();
             return
             }
-            sorteados.push(numero);
+           
         }
-
+        sorteados.push(numero);
         
     }
 
