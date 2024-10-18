@@ -3,6 +3,16 @@ function sortear() {
     let num_inicial = parseInt(document.getElementById('de').value);
     let num_final = parseInt(document.getElementById('ate').value);
 
+// Fazendo a verificação*
+
+if (num_inicial > num_final) {
+
+alert(`Erro! O número inserido no campo "Do número" é maior do que "Até o número". Tente novamente`)
+reiniciar();
+alterarStatusBtn();
+return
+
+}
  
     // Vamos recomeçar a estrutra para gerar a o números de acordo com a quantidade inserida pelo usuário
 
