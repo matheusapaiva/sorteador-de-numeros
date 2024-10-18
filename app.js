@@ -3,39 +3,39 @@ function sortear() {
     let num_inicial = parseInt(document.getElementById('de').value);
     let num_final = parseInt(document.getElementById('ate').value);
 
-// Fazendo a verificação*
+    // Fazendo a verificação*
 
-if (num_inicial > num_final) {
+    if (num_inicial > num_final) {
 
-alert(`Erro! O número inserido no campo "Do número" é maior do que "Até o número". Tente novamente`)
-reiniciar();
-alterarStatusBtn();
-return
+        alert(`Erro! O número inserido no campo "Do número" é maior do que "Até o número". Tente novamente`)
+        reiniciar();
+        alterarStatusBtn();
+        return
 
-}
- 
+    }
+
     // Vamos recomeçar a estrutra para gerar a o números de acordo com a quantidade inserida pelo usuário
 
     // Criando um array para guardar os números sorteados
 
     let sorteados = [];
     let numero;
-   
-    
-         // Criando um laço para percorrer dentre os números escolhidos
 
-        for (let i = 0; i < quantidade; i++) {
+
+    // Criando um laço para percorrer dentre os números escolhidos
+
+    for (let i = 0; i < quantidade; i++) {
         numero = gerarNumeroAleatorio(num_inicial, num_final);
 
         // Utilizar o while para, equanto o número sorteado já estiver no array ele precisará gerar outro número
 
-            while (sorteados.includes(numero)) {
+        while (sorteados.includes(numero)) {
             numero = gerarNumeroAleatorio(num_inicial, num_final);
-                
+
         }
 
         sorteados.push(numero);
-        }
+    }
 
     // Fazer o output do array na página, ao invés de usar o alert
 
@@ -66,7 +66,7 @@ return
 
 
 function gerarNumeroAleatorio(min, max) {
-return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function alterarStatusBtn() {
@@ -82,11 +82,11 @@ function alterarStatusBtn() {
 }
 
 // Reiniciar o programa
-    // reiniciar();
+// reiniciar();
 
 function reiniciar() {
     document.getElementById('quantidade').value = ' ';
-    document.getElementById('de').value = ' ' ;
+    document.getElementById('de').value = ' ';
     document.getElementById('ate').value = ' ';
     document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>'
     alterarStatusBtn();
