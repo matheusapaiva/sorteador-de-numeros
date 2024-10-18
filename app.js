@@ -20,6 +20,7 @@ function sortear() {
 
     let sorteados = [];
     let numero;
+    let intervalo = num_final - num_inicial;
 
 
     // Criando um laço para percorrer dentre os números escolhidos
@@ -29,12 +30,18 @@ function sortear() {
 
         // Utilizar o while para, equanto o número sorteado já estiver no array ele precisará gerar outro número
 
-        while (sorteados.includes(numero)) {
+            while (sorteados.includes(numero)) {
             numero = gerarNumeroAleatorio(num_inicial, num_final);
-
+            if (quantidade > (intervalo + 1)) {
+            alert('Erro! A quantidade de números é maior do que o intervalo entre "Do número" "Até o número" ')
+            reiniciar();
+            alterarStatusBtn();
+            return
+            }
+            sorteados.push(numero);
         }
 
-        sorteados.push(numero);
+        
     }
 
     // Fazer o output do array na página, ao invés de usar o alert
